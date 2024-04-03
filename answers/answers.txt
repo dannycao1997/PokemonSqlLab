@@ -37,6 +37,10 @@ SELECT COUNT(pokemons.name) AS Pokemon_Count, types.name AS Primary_Types FROM p
 /*How many pokemon at level 100 does each trainer with at least one level 100 pokemone have? (Hint: your query should not display a trainer
 SELECT COUNT(*) AS Level_100_Pokemons_Per_Trainer FROM pokemon_trainer WHERE pokelevel = 100 GROUP by trainerID;
 
+/* How many pokemon only belong to one trainer and no other?
+SELECT COUNT(*) AS Number_Of_Pokemons_That_Belong_To_One_Trainer FROM pokemon_trainer WHERE pokemon_id = trainerID  GROUP by trainerID;
+
+
 
 
 
