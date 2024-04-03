@@ -1,5 +1,5 @@
 create table pokemons(id int auto_increment primary key,name text not null,primary_type int not null,secondary_type int null);
-INSERT INTO pokemon.pokemons (id, primary_type, secondary_type) VALUES (1, 'Smeargle', 1, null);
+INSERT INTO pokemon.pokemons (., primary_type, secondary_type) VALUES (1, 'Smeargle', 1, null);
 INSERT INTO pokemon.pokemons (id, name, primary_type, secondary_type) VALUES (2, 'Wailord', 2, null);
 INSERT INTO pokemon.pokemons (id, name, primary_type, secondary_type) VALUES (3, 'Vileplume', 3, 7);
 INSERT INTO pokemon.pokemons (id, name, primary_type, secondary_type) VALUES (4, 'Armaldo', 4, 8);
