@@ -31,6 +31,17 @@ SELECT pokemons.name from pokemons join trainers on pokemons.id = trainers.train
 /*How many pokemon have a secondary type Poison?
 SELECT pokemons.name, types.name FROM pokemons JOIN types ON pokemons.secondary_type = types.id WHERE types.name = 'Poison';
 
+/*What are all the primary types and how many pokemon have that type?
+SELECT COUNT(pokemons.name) AS Pokemon_Count, types.name AS Primary_Types FROM pokemons JOIN types on pokemons.primary_type = types.id group by primary_type;
+
+
+
+
+
+
+
+
+
 
 
 
