@@ -40,18 +40,23 @@ SELECT COUNT(*) AS Level_100_Pokemons_Per_Trainer FROM pokemon_trainer WHERE pok
 /* How many pokemon only belong to one trainer and no other?
 SELECT COUNT(*) AS Number_Of_Pokemons_That_Belong_To_One_Trainer FROM pokemon_trainer WHERE pokemon_id = trainerID  GROUP by trainerID;
 
+/*Sort the data by finding out which trainer has the strongest pokemon so that this will act as a ranking of strongest to weakest trainer. You may interpret strongest in whatever way you want, but you will have to explain your decision.
+SELECT pokemons.name AS "Pokemon's name",  trainers.trainername AS "Trainer's name",  pokemon_trainer.pokelevel AS "Current Level", pokemons.primary_type AS "Primary Type Name", types.name AS "Secondary Type Name"
+FROM pokemon_trainer JOIN trainers ON trainers.trainerID = pokemon_trainer.trainerID JOIN pokemons ON pokemon_trainer.pokemon_id = pokemons.id JOIN JOIN types ON pokemons.secondary_type = types.id ORDER BY pokemon_trainer.pokelevel DESC LIMIT 20
 
+SELECT pokemons.name AS "Pokemon's name",  trainers.trainername AS "Trainer's name",  pokemon_trainer.pokelevel AS "Current Level", typez.name AS "Primary Type Name", types.name AS "Secondary Type Name"
+FROM pokemon_trainer
+JOIN trainers ON trainers.trainerID = pokemon_trainer.trainerID
+JOIN pokemons ON pokemon_trainer.pokemon_id = pokemons.id
+JOIN types ON pokemons.secondary_type = types.id
+Join typez ON pokemons.primary_type = typez.id
+ORDER BY pokemon_trainer.pokelevel DESC limit 50;
 
-
-
-
-
-
-
-
-
-
-
-
+SELECT pokemons.name AS "Pokemon's name",  trainers.trainername AS "Trainer's name",  pokemon_trainer.pokelevel AS "Current Level", primary_type AS "Primary Type Name", types.name AS "Secondary Type Name"
+FROM pokemon_trainer
+JOIN trainers ON trainers.trainerID = pokemon_trainer.trainerID
+JOIN pokemons ON pokemon_trainer.pokemon_id = pokemons.id
+JOIN types ON pokemons.secondary_type = types.id
+ORDER BY pokemon_trainer.pokelevel DESC limit 50;
 
 
