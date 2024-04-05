@@ -40,10 +40,10 @@ GROUP BY primary_type;
 SELECT COUNT(*) AS Level_100_Pokemons_Per_Trainer
 FROM pokemon_trainer
 WHERE pokelevel = 100
-GROUP by trainerID;
+GROUP BY trainerID;
 
 -- How many pokemon only belong to one trainer and no other?
-SELECT COUNT(*) as Pokemons_That_Only_Belong_To_One_Trainer
+SELECT COUNT(*) AS Pokemons_That_Only_Belong_To_One_Trainer
 FROM(SELECT pokemon_id FROM pokemon_trainer GROUP BY pokemon_trainer.pokemon_id HAVING COUNT( pokemon_trainer.pokemon_id) = 1)
 AS single_trainer_one_pokemon;
 
