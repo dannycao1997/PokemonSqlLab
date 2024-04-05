@@ -50,3 +50,11 @@ JOIN types AS st ON pokemons.secondary_type = st.id
 ORDER BY pokemon_trainer.pokelevel DESC limit 50;
 
 
+SELECT *
+FROM trainers
+WHERE EXISTS (SELECT * FROM pokemon_trainer WHERE trainerID = pokemon_trainer.trainerID);
+
+SELECT * FROM trainers
+WHERE trainerID = (SELECT trainerID FROM pokemon_trainer GROUP BY trainerID
+ORDER BY COUNT(*)
+DESC LIMIT 1);
